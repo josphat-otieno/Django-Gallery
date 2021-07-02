@@ -9,11 +9,22 @@ class Photographer(models.Model):
     def __str__(self):
         return self.first_name
 
+    def save_photographer(self):
+        self.save()
+
+    def delete_photographer(self):
+        self.delete()
+
 class Category(models.Model):
     category_name = models.CharField(max_length=30)
 
     def __str__(self):
         return self.category_name
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()
 
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
@@ -21,9 +32,28 @@ class Location(models.Model):
     def __str__(self):
         return self.location_name
 
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
+
+
 class Images(models.Model):
     image_name = models.CharField(max_length=30)
     image_description = models.TextField()
     image = models.ImageField(upload_to='galleries/')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.image_name
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+
+
+        

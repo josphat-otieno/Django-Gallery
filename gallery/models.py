@@ -10,3 +10,9 @@ class Photographer(models.Model):
     def __str__(self):
         return self.first_name
 
+class Category(models.Model):
+    category_name = CharField(max_length=30)
+
+    def __str__(self):
+        return self.category_name
+

@@ -8,7 +8,8 @@
 
             {% for image in images %}
                 <h1>{{image.image_name}}</h1>
-                <img src="{{image.image.url}}" class="img-responsive"  alt="Image">
+                <img src="{{image.image.url}}" class="img-responsive"  alt="Image" style="height: 200px; width: 200px;">
+                <p>{{image.image_description}}</p>
             {% endfor %}
     </div>
 {% endblock %}

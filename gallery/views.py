@@ -16,3 +16,7 @@ def image(request,image_id):
     except Images.DoesNotExist:
         raise Http404()
     return render(request,"all-gallery/image.html", {"image":image})
+
+
+def search_results(reques):
+    pass

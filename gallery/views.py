@@ -15,8 +15,17 @@ def image(request,image_id):
         image = Images.objects.get(id = image_id)
     except Images.DoesNotExist:
         raise Http404()
+    
     return render(request,"all-gallery/image.html", {"image":image})
 
+def single_image(request, image_id):
+    if 'image' in request.POST and request.POST['image']:
+        image = Images.get(id = image_id)
+        return render(request, 'all-gallery/single-image.html', {"image":image})
 
-def search_results(reques):
+    else:
+        return render(request, 'all-gallery/index.html')
+
+
+def search_results(request):
     pass

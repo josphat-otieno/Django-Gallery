@@ -66,8 +66,18 @@ class Images(models.Model):
         image= cls.objects.filter(id = image_id)
         return image
 
-    # @classmethod
-    # def search_image_by_category(cls, category):
+
+    @classmethod
+    def search_image_by_category(cls, category):
+        pass
+
+    @classmethod
+    def filter_image_by_location(cls):
+        pass
+    # def days_news(cls,date):
+    #     news = cls.objects.filter(pub_date__date = date)
+    #     return news
+
         
 
         

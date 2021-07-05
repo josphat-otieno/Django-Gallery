@@ -7,8 +7,14 @@
         <h1 class="text-center">Welcome to my Galleries</h1>
 
             {% for image in images %}
-         <h1>{{image.image_name}}</h1></a> 
-                <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive"  alt="Image" style="height: 200px; width: 200px;"></a>
+            <h2 class="text-center"> {{ image.image_name }}</h2>
+            <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive"  alt="Image" style="height: 200px; width: 200px;"></a>
+            {{image.location}}
             {% endfor %}
+
+                <h1>Locations</h1>
+            {% for location in locations %}
+                <h1>{{location.location_name}}</h1>
+            {% endfor %} 
     </div>
 {% endblock %}

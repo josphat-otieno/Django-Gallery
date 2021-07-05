@@ -1,3 +1,4 @@
+
 from django.db import models
 
 # Create your models here.
@@ -28,6 +29,7 @@ class Category(models.Model):
 
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
+    
 
     def __str__(self):
         return self.location_name
@@ -68,15 +70,63 @@ class Images(models.Model):
 
 
     @classmethod
-    def search_image_by_category(cls, category):
-        pass
+    def search_image_by_category(cls,search_term):
+        search_result = cls.objects.filter(category__category_name__icontains=search_term)
+        return search_result
+
+    
 
     @classmethod
-    def filter_image_by_location(cls):
-        pass
+    def get_images_by_location(cls,location):
+        location_images = cls.objects.filter(location__location_name__icontains=location).all()
+        return location_images
     # def days_news(cls,date):
     #     news = cls.objects.filter(pub_date__date = date)
     #     return news
+
+# @classmethod
+#     def search_by_category(cls,search_term):
+#         search_result = cls.objects.filter(image_category__cat_name__icontains=search_term)
+#         return search_result
+
+    # Spanning multi-valued relationships¶
+    # Blog.objects.filter(entry__headline__contains='Lennon')
+    # Blog.objects.filter(entry__headline__contains='Lennon').filter(entry__pub_date__year=2008)
+    # Blog.objects.filter(entry__headline__contains='Lennon', entry__pub_date__year=2008)
+    # Blog.objects.filter(entry__authors__name='Lennon')
+    # # Blog.objects.filter(entry__headline__contains='Lennon')
+
+    #lookups spanning relationship
+    #  Entry.objects.filter(blog__name='Beatles Blog')
+
+
+# class Blog(models.Model):
+#     name = models.CharField(max_length=100)
+#     tagline = models.TextField()
+
+#     def __str__(self):
+#         return self.name
+
+# class Author(models.Model):
+#     name = models.CharField(max_length=200)
+#     email = models.EmailField()
+
+#     def __str__(self):
+#         return self.name
+
+# class Entry(models.Model):
+#     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+#     headline = models.CharField(max_length=255)
+#     body_text = models.TextField()
+#     pub_date = models.DateField()
+#     mod_date = models.DateField()
+#     authors = models.ManyToManyField(Author)
+#     number_of_comments = models.IntegerField()
+#     number_of_pingbacks = models.IntegerField()
+#     rating = models.IntegerField()
+
+#     def __str__(self):
+#         return self.headline
 
         
 

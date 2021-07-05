@@ -10,6 +10,5 @@ urlpatterns = [
     url(r'^location/(?P<location>\w+)', views.get_images_by_location, name='get_images_by_location'),
    
 ]
-
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

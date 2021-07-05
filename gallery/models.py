@@ -80,14 +80,11 @@ class Images(models.Model):
     def get_images_by_location(cls,location):
         location_images = cls.objects.filter(location__location_name__icontains=location).all()
         return location_images
+
+  
     # def days_news(cls,date):
     #     news = cls.objects.filter(pub_date__date = date)
     #     return news
-
-# @classmethod
-#     def search_by_category(cls,search_term):
-#         search_result = cls.objects.filter(image_category__cat_name__icontains=search_term)
-#         return search_result
 
     # Spanning multi-valued relationships¶
     # Blog.objects.filter(entry__headline__contains='Lennon')

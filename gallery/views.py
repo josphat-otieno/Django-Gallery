@@ -28,8 +28,6 @@ def get_image_by_location(request,loc):
 def copy_to_clipboard(request):
     pyperclip.copy(image)
 
-def search_results(request):
-    pass
 
 def search_results(request):
     
@@ -44,5 +42,9 @@ def search_results(request):
         message = "You haven't searched for any category"
         return render(request, 'all-gallery/search.html',{"message":message})
 
+def get_images_by_location(request,location):
+   
+    location_images = Images.objects.filter(location__location_name= location)
+    return render(request,'all-gallery/location.html',{'location_images':location_images})
 
     

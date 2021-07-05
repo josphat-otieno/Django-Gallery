@@ -20,10 +20,7 @@ def image(request,image_id):
     return render(request,"all-gallery/image.html", {"image":image})
 
 
-def get_image_by_location(request,loc):
-    my_images = Images.get_image_by_location(loc)
-    print(my_images)
-    return render(request, 'location.html', {"my_images": my_images})
+
 
 def copy_to_clipboard(request):
     pyperclip.copy(image)
@@ -44,7 +41,9 @@ def search_results(request):
 
 def get_images_by_location(request,location):
    
-    location_images = Images.objects.filter(location__location_name= location)
+    location_images = Images.get_images_by_location(location)
     return render(request,'all-gallery/location.html',{'location_images':location_images})
+
+
 
     

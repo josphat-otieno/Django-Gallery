@@ -71,15 +71,17 @@ class Images(models.Model):
 
     @classmethod
     def search_image_by_category(cls,search_term):
-        search_result = cls.objects.filter(category__category_name__icontains=search_term)
+        search_result = cls.objects.filter(category__category_name__contains=search_term)
         return search_result
 
     
 
     @classmethod
     def get_images_by_location(cls,location):
-        location_images = cls.objects.filter(location__location_name__icontains=location).all()
+        location_images = cls.objects.filter(location__location_name=location).all()
         return location_images
+
+    
 
   
     # def days_news(cls,date):

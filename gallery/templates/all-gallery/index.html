@@ -14,7 +14,7 @@
 
                 <h1>Locations</h1>
             {% for location in locations %}
-                <h1>{{location.location_name}}</h1>
+               <a href="{% url 'get_images_by_location' location.id %}"><h1>{{location.location_name}}</h1></a> 
             {% endfor %} 
     </div>
 {% endblock %}

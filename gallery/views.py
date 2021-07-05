@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, Http404
 from .models import Category, Location, Images
-import pyperclip
 
 # Create your views here.
 def index(request):
@@ -23,7 +22,7 @@ def image(request,image_id):
 
 
 def copy_to_clipboard(request):
-    pyperclip.copy(image)
+    pass
 
 
 def search_results(request):

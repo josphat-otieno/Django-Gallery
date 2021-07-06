@@ -1,5 +1,5 @@
 # Django Gallery
-## This is a 
+## This is a django gallery application where users can upload their photos and store according to different locations taken and different category
  
  ## Author
 ## By **[JOSEPHAT OTIENO](https://github.com/josphat-otieno)**
@@ -46,7 +46,7 @@ No known bugs
 
 ## Technologies Used
 - Python3.8
-- Flask
+- Django
 - Heroku
 
 ## Contacts

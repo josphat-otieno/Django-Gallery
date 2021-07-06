@@ -1,27 +1,32 @@
 {%extends 'all-gallery/base.html'%} 
 {% block content %}
-<div class="container">
+<div class="container-fluid" style="background-color: #003049; margin-top: 0px;">
+  <div class="container">
 
-  <div class="row">
+    <div class="row">
+      <h1>IMAGES IN THIS CATEGORY</h1>
+      {% if all_images %}
+        <h2>Found {{ images|length }} of searched  {{message}}</h2>
+      {% else %}
+        <h2> Found 0 images for the search term {{message}}</h2>
+      {% endif %}
+  
+    </div>
+  
+    <div class="row">
+  
     {% if all_images %}
-      <h2>Found {{ images|length }} of searched  {{message}}</h2>
-    {% else %}
-      <h2> Found 0 images for the search term {{message}}</h2>
+      {% for image in all_images %}
+        <div class="col-sm-6 col-md-3">
+            <h1 style="text-transform: capitalize;">{{image.image_name}}</h1>
+            <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive" alt="Image"
+              style="height: 300px; width: 400px;margin: auto;margin-bottom: 10px;"></a>
+              <h3>{{image.}}</h3>
+        </div>
+      {% endfor %}
     {% endif %}
-
+    </div>
   </div>
 
-  <div class="row">
-
-  {% if all_images %}
-    {% for image in all_images %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{image.image_name}}</h1>
-          <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive" alt="Image"
-            style="height: 300px; width: 400px;margin: auto;margin-bottom: 10px;"></a>
-      </div>
-    {% endfor %}
-  {% endif %}
-  </div>
 </div>
 {% endblock %}

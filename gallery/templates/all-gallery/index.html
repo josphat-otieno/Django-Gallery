@@ -5,11 +5,10 @@
 {% block content %}
 {{block.super}}
 
-<div class="container-fluid" style="background-color: #003049;">
+<div class="container-fluid" style="background-color: #003049; margin-top: 0px;">
     <div class="container">
         <h1 class="text-center">Welcome to my Galleries</h1>
-    
-        <div class="row">
+        <div class="row" style="margin-top: 10px;">
             <div class="col-md-12">
                 <div class="card-columns">
                     {% for image in images %}

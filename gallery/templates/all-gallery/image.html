@@ -1,23 +1,28 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
 {%extends 'all-gallery/base.html'%}
 
 {% block content %}
 
-<div class="container-fluid" style="background-color: #003049;">
+<div class="container-fluid" style="background-color: #003049; margin-top: 0px;">
   <div class="container">
-    <h1 class="text-center">{{image.image_name}}</h1>
+    <h1 class="text-center" style="text-transform: capitalize;">{{image.image_name}}</h1>
     <div class="row">
       <div class="col-xs-12 col-sm-9 col-md-8 ">
         <img src="{{image.image.url}}" class="img-responsive" alt="" style="height: 500px ;width: 700px;">
+        <button class="btn btn-primary" onclick="prompt('Press Ctrl + C, then Enter to copy to clipboard',window.location.href)" style="font-size: 30px;">Copy Link</button>
       </div>
       <div class="col-md-4">
-        <h2>Description</h2>
-        <p>{{image.image_description}}</p>
-        <p>{{image.category}}</p>
-        <p>Location: {{image.location}}</p>
-        <button class="btn btn-primary" onclick="prompt('Press Ctrl + C, then Enter to copy to clipboard',window.location.href)">Copy Link</button>
+        <div class="text" style="color: honeydew;">
+          <h1 class="text-center" style="text-transform: uppercase; ">Description</h1>
+          <p style="font-family: Playfair Display; font-size: 30px;">{{image.image_description}}</p>
+          <p style="font-size: 25px;"> Category: <span style="text-transform: capitalize;">{{image.category}}</span> </p>
+          <p style="font-weight: bolder; font-size: 20px;">Location: <span style="text-transform: capitalize;">{{image.location}}</span></p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 {% endblock %}

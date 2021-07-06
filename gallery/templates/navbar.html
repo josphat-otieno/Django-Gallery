@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -13,7 +13,7 @@
                 </div>
             </div>
             <!-- adding a search form -->
-            <div class="col-sm-4 col-md-4 navbar-right">
+            <!-- <div class="col-sm-4 col-md-4 navbar-right">
                 <form class="navbar-form" role="search" action="{% url 'search_results' %}">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search Category" name="category">
@@ -24,5 +24,64 @@
                 </form>
             </div>
         </nav>
-    </body>
-</html>
+    </body> -->
+</html> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/css/mdb.min.css" rel="stylesheet">
+
+        <nav class="navbar navbar-expand-lg bg-dark p-4">
+          <a class="navbar-brand" href="/"style="font-size:30px;color:white;font-weight:bold">JOSE-GALLERY</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'index' %}"style="font-size:30px;color:white;font-weight:bold">Home <span class="sr-only">(current)</span></a>
+              </li>
+                      
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="font-size:30px;color:white;font-weight:bold">
+                    Category
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for category in categories %}
+                    <a class="dropdown-item" href="/category/{{category.category_name}}">{{category.category_name}}</a>
+                    <div class="dropdown-divider"></div> 
+
+                  {% endfor %}
+                </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:30px;color:white;font-weight:bold">
+                    Locations
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for location in locations %}
+                    <a class="dropdown-item" href="/location/{{location.location_name}}">{{location.location_name}}</a>
+                    <div class="dropdown-divider"></div>
+
+                  
+                  {% endfor %}
+                </div>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" name="searchItem" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit"style="font-size:20px;color:black;font-weight:bold">Search Category</button>
+            </form>
+          </div>
+        </nav>
+        <br> <br>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/js/mdb.min.js"></script>

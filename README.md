@@ -7,41 +7,37 @@
 ## User Stories
 These are the behaviours/features that the application implements for use by a user and writer.
 
-* User opens the application
-* The user sees various blogs posted by bloggers
-* The user comments on the blog
-* users can subscribe to recieve notifications about new posts
-* Blogger/witer logs in into the application
-* Sees the comments postes by other users
-* The writer deletes comments found offensive
-* The writer updates varoius posts
-* The writer can delete various posts
-* The writers can Upload their profile photos and update thier bio
+* User loads the application using the url provided
+* The user sees various photos posted
+* The user clicks on the photo; photos details page is loaded
+* user searches for images by category
+* different photos are loaded according to that category
+* User filters photos by location and different photos are loaded according to that location
+* user clicks on the copy button to copy the link to download images
+
 
 ## Behaviour Driven Development
 ## Specifications
 | Behaviour | Input | Output |
 | :---------------- | :---------------: | ------------------: |
-| users loads the application | *On page load* | user sees various posts/blogs posted by bloggers |
-| user clicks on comment button | *On  click* | comment page is loaded and user sees various comments and can add more comments |
-| user clicks on subscribe button | *on lcick* | subscription page is loaded and user enters details for subscription |
-| writer cllicks on sign up | *On page load* | sign up page is loaded and user can sign up to be a blogger |
-| writer clicks on crete blog  | *on page load* | user is able to create blog on when the page loads |
-| writes clicks on edit post| *edit page is loaded* | user is able to update the blog|
-| writer clicks on delete post | *on page load* | the post is deleted |
-| writer clicks on delete comment | *on page load* | the comment is deleted|
-| writer clicks on profile | *on page load* | the writer add profile adds profile infoemation and uploads a profile photo|
+| users loads the application | *On page load* | user sees various photos posted on the application |
+| user clicks on the photo | *On  click* | photo's details page is loaded showing the description, name , location and category |
+| user searches for category on the search bar | *on page load* | different photos are loaded according to that category |
+| user clicks on the loaction | *On page load* | different photos are loaded according to that location |
+| user clicks on the copy button  |  | image link is copied to the clipboard |
+
 
 ## Prerequisites
 * Python3.8
 
 ## Setup/Installation Requirements
-* Clone [this repository]( https://github.com/josphat-otieno/blog-post.git)  using the following commamnd  in the terminal: `git clone  https://github.com/josphat-otieno/blog-post.git`. 
-* Note:<em>You will need to git installed in your machine. You can install using the following comman: `$ sudo apt-get install git.`</em>
+* Clone [this repository]( https://github.com/josphat-otieno/Django-Gallery.git)  using the following commamnd  in the terminal: `git clone  https://github.com/josphat-otieno/Django-Gallery.git`. 
+* Note:<em>You will need  git installed in your machine. You can install using the following comman: `$ sudo apt-get install git.`</em>
 * After cloning, navigate to the folder where the repo was cloned and open it with your favorite code editor. 
 * Create a vitual environment using the following command `python3 -m venv --without-pip virtual`
 * Activate the virtual environment using the following command `source virtual/bin/activate`
-* Run thefollowing command  to interact with the application `$python3.8 manage.py server`
+* Run thefollowing command  to interact with the application `$python3.8 manage.py runserver`
+* 
 * Run tests units using the following command `$python3.8 manage.py test`
 
 ## Known Bugs

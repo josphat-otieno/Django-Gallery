@@ -12,11 +12,13 @@
                    <a href="location/{{location.location_name}}"><h1>{{location.location_name}}</h1></a> 
                 {% endfor %} 
              </div>
-             <div class="col-md-8" style="display: flex;">  
-                 {% for image in images %}
-                <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive"  alt="Image" style="height: 200px; width: 200px;"></a>
-                {{image.location}}
-                {% endfor %}
+             <div class="col-md-8">  
+                 <div class="card-columns">
+                    {% for image in images %}
+                    <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive"  alt="Image" style="height: 200px; width: 200px;"></a>
+                    {{image.location}}
+                    {% endfor %}
+                 </div>
             </div>
             <div class="col-md-2">
                 <h2>Category</h2>

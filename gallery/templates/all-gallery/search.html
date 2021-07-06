@@ -17,6 +17,8 @@
     {% for image in all_images %}
       <div class="col-sm-6 col-md-3">
           <h1>{{image.image_name}}</h1>
+          <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive" alt="Image"
+            style="height: 300px; width: 400px;margin: auto;margin-bottom: 10px;"></a>
       </div>
     {% endfor %}
   {% endif %}

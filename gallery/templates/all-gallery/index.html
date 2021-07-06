@@ -6,19 +6,24 @@
 {{block.super}}
 
 <div class="container-fluid">
-    <h1 class="text-center">Welcome to my Galleries</h1>
-
-    <div class="row">
-        <div class="col-md-8">
-            <div class="card-columns">
-                {% for image in images %}
-                <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive" alt="Image"
-                        style="height: 300px; width: 300px;"></a>
-                {{image.location}}
-                {% endfor %}
+    <div class="container">
+        <h1 class="text-center">Welcome to my Galleries</h1>
+    
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-columns">
+                    {% for image in images %}
+                    <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive" alt="Image"
+                            style="height: 300px; width: 400px;margin: auto;margin-bottom: 10px;"></a>
+    
+                    {% endfor %}
+                </div>
+                </div>
             </div>
         </div>
+    
     </div>
+    
 
 </div>
 

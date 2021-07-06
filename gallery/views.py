@@ -38,9 +38,9 @@ def search_results(request):
         message = "You haven't searched for any category"
         return render(request, 'all-gallery/search.html',{"message":message})
 
-def get_category(request,category):
+def get_category_images(request,category):
     
-    image_categories = Images.objects.filter(category__category_name = category)
+    image_categories = Images.get_images_by_category(category)
     return render(request,'all-gallery/category.html',{'image-categories':image_categories})
 
 def get_images_by_location(request,location):

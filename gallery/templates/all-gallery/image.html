@@ -1,20 +1,23 @@
 {%extends 'all-gallery/base.html'%}
 
- {% block content %}
+{% block content %}
 
- <div class="container">
+<div class="container-fluid">
+  <div class="container">
+    <h1 class="text-center">{{image.image_name}}</h1>
+    <div class="row">
+      <div class="col-xs-12 col-sm-9 col-md-8 ">
+        <img src="{{image.image.url}}" class="img-responsive" alt="" style="height: 500px ;width: 700px;">
+      </div>
+      <div class="col-md-4">
+        <h2>Description</h2>
+        <p>{{image.image_description}}</p>
+        <p>{{image.category}}</p>
+        <p>Location: {{image.location}}</p>
+        <button onclick="prompt('Press Ctrl + C, then Enter to copy to clipboard',window.location.href)">Copy Link</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-   <div class="row">
-     <img src="{{image.image.url}}"  class="img-responsive" alt="">
-   </div>
-
-   <div class="row">
-     <h1 class="text-center">{{image.image_name}}</h1>
-   </div>
-
-   <div class="row">
-     <p>{{image.image_description}}</p>
-   </div>
- </div>
-
- {% endblock %}
+{% endblock %}

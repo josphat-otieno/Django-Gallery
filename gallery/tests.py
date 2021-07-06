@@ -108,8 +108,7 @@ class ImageTestCase(TestCase):
         images= self.new_image.search_image_by_category(category)
         self.assertTrue(len(images)==1)
 
-    
-        
+   
 
 
 

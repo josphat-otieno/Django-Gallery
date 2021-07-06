@@ -36,7 +36,10 @@ These are the behaviours/features that the application implements for use by a u
 * After cloning, navigate to the folder where the repo was cloned and open it with your favorite code editor. 
 * Create a vitual environment using the following command `python3 -m venv --without-pip virtual`
 * Activate the virtual environment using the following command `source virtual/bin/activate`
+* set up your Database in psql
+* run `python3.8 manage.py migrate` followed by `python3.8 manage.py makemigrations gallery` and finally `python3.8 manage.py migrate` 
 * Run thefollowing command  to interact with the application `$python3.8 manage.py runserver`
+* create a super `python3.8 manage.py createsuperuser` to start adding your own photos
 * 
 * Run tests units using the following command `$python3.8 manage.py test`
 

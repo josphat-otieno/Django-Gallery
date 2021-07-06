@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import os
 import django_on_heroku
 import dj_database_url
@@ -20,7 +23,11 @@ MODE=config("MODE",default="dev")
 SECRET_KEY=config('SECRET_KEY')
 DEBUG=config('DEBUG',default=False, cast=bool)
 
-
+cloudinary.config( 
+  cloud_name = "dqav5rjw8", 
+  api_key = "522289631973827", 
+  api_secret = "eLj36d2-Ys_hnz5aYJMIVLrga60" 
+)
 #development
 if config('MODE')=="dev":
     DATABASES={
@@ -75,6 +82,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap3',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [

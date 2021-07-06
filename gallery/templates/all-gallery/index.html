@@ -3,18 +3,30 @@
 {% block content %}
 {{block.super}}
 
-    <div>
+    <div class="container-fluid">
         <h1 class="text-center">Welcome to my Galleries</h1>
 
-            {% for image in images %}
-            <h2 class="text-center"> {{ image.image_name }}</h2>
-            <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive"  alt="Image" style="height: 200px; width: 200px;"></a>
-            {{image.location}}
-            {% endfor %}
-
-                <h1>Locations</h1>
-            {% for location in locations %}
-               <a href="location/{{image.location}}"><h1>{{location.location_name}}</h1></a> 
-            {% endfor %} 
-    </div>
+        <div class="row">
+            <div class="col-md-2"><h1>Locations</h1>
+                {% for location in locations %}
+                   <a href="location/{{location.location_name}}"><h1>{{location.location_name}}</h1></a> 
+                {% endfor %} 
+             </div>
+             <div class="col-md-8" style="display: flex;">  
+                 {% for image in images %}
+                <a href="{% url 'image' image.id %}"><img src="{{image.image.url}}" class="img-responsive"  alt="Image" style="height: 200px; width: 200px;"></a>
+                {{image.location}}
+                {% endfor %}
+            </div>
+            <div class="col-md-2">
+                <h2>Category</h2>
+                {% for category in categories %}
+                    {{category.category_name}}
+    
+                {% endfor %}
+            </div>
+        </div>
+       
+</div>
+                  
 {% endblock %}

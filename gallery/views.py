@@ -18,6 +18,13 @@ def image(request,image_id):
     
     return render(request,"all-gallery/image.html", {"image":image})
 
+
+
+
+def copy_to_clipboard(request):
+    pass
+
+
 def search_results(request):
     
     if 'images' in request.GET and request.GET["images"]:
